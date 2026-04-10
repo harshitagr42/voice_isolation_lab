@@ -433,6 +433,20 @@ def run_inference(args):
     print("\n" + report_text)
     print(f"\nAll outputs saved to: {out_dir}/")
 
+def run_inference_api(input_path: str, output_dir: str, checkpoint="models/eend_ss_best.pth"):
+    """
+    Wrapper for API usage
+    """
+    class Args:
+        def __init__(self):
+            self.input = input_path
+            self.output_dir = output_dir
+            self.checkpoint = checkpoint
+            self.ground_truth = False
+            self.threshold = 0.5
+
+    args = Args()
+    run_inference(args)
 
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
