@@ -104,7 +104,7 @@ def get_job(job_id: str):
     return {
         "job_id": job_id,
         "files": os.listdir(job_path),
-        "url_base": f"http://localhost:8001/outputs/{job_id}"
+        "url_base": f"http://localhost:8000/outputs/{job_id}"
     }
 
 

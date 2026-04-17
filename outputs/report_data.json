@@ -1,0 +1,1278 @@
+{
+  "generated_at": "2026-04-13 21:56:19",
+  "checkpoint": {
+    "epoch": 38,
+    "val_loss": -5.005,
+    "val_sisnr_db": 5.2591,
+    "checkpoint_path": "models/eend_ss_best.pth"
+  },
+  "model_config": {
+    "N_encoder_filters": 256,
+    "L_encoder_kernel": 16,
+    "B_bottleneck_channels": 128,
+    "H_hidden_channels": 256,
+    "X_tcn_layers_per_repeat": 8,
+    "R_tcn_repeats": 3,
+    "d_model_transformer": 256,
+    "n_heads_attention": 4,
+    "n_layers_transformer": 4,
+    "max_speakers": 3,
+    "chunk_duration_s": 4.0,
+    "batch_size": 8,
+    "learning_rate": 0.001,
+    "lambda_sisnr": 1.0,
+    "lambda_diar": 0.2,
+    "lambda_exist": 0.2
+  },
+  "model_params": {
+    "total_parameters": 6246321,
+    "conv_tasnet_parameters": 1771952,
+    "eend_parameters": 4474369,
+    "model_size_mb": 25.0
+  },
+  "dataset_stats": {
+    "train": {
+      "n_samples": 10000,
+      "mean_duration_s": 26.8,
+      "min_duration_s": 5.09,
+      "max_duration_s": 30.0,
+      "n_2speaker": 4943,
+      "n_3speaker": 5057,
+      "pct_2speaker": 49.4,
+      "pct_3speaker": 50.6
+    },
+    "val": {
+      "n_samples": 2000,
+      "mean_duration_s": 27.03,
+      "min_duration_s": 13.26,
+      "max_duration_s": 30.0,
+      "n_2speaker": 989,
+      "n_3speaker": 1011,
+      "pct_2speaker": 49.5,
+      "pct_3speaker": 50.5
+    },
+    "test": {
+      "n_samples": 2000,
+      "mean_duration_s": 26.97,
+      "min_duration_s": 14.08,
+      "max_duration_s": 30.0,
+      "n_2speaker": 1034,
+      "n_3speaker": 966,
+      "pct_2speaker": 51.7,
+      "pct_3speaker": 48.3
+    }
+  },
+  "eval_config": {
+    "n_test_samples": 50,
+    "device": "mps",
+    "threshold": 0.5,
+    "random_seed": 42
+  },
+  "results": {
+    "overall": {
+      "n_samples": 50,
+      "mean_sisnr_db": 1.693,
+      "std_sisnr_db": 9.979,
+      "median_sisnr_db": 3.582,
+      "mean_DER": 0.277,
+      "mean_FA": 0.144,
+      "mean_MISS": 0.132,
+      "speaker_count_accuracy": 0.84,
+      "mean_duration_s": 26.76
+    },
+    "2_speaker": {
+      "n_samples": 25,
+      "mean_sisnr_db": 5.417,
+      "std_sisnr_db": 2.013,
+      "median_sisnr_db": 5.957,
+      "mean_DER": 0.222,
+      "mean_FA": 0.097,
+      "mean_MISS": 0.125,
+      "speaker_count_accuracy": 0.92,
+      "mean_duration_s": 26.34
+    },
+    "3_speaker": {
+      "n_samples": 25,
+      "mean_sisnr_db": -2.032,
+      "std_sisnr_db": 12.937,
+      "median_sisnr_db": 2.504,
+      "mean_DER": 0.331,
+      "mean_FA": 0.192,
+      "mean_MISS": 0.139,
+      "speaker_count_accuracy": 0.76,
+      "mean_duration_s": 27.19
+    }
+  },
+  "per_sample_results": [
+    {
+      "mixture_id": "test_1678",
+      "duration": 28.61,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 4.961,
+      "sisnr_per_speaker": [
+        8.184,
+        1.738
+      ],
+      "der": {
+        "DER": 0.2573,
+        "FA": 0.0984,
+        "MISS": 0.1589
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.243,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0123",
+      "duration": 27.04,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 1.054,
+      "sisnr_per_speaker": [
+        1.121,
+        0.987
+      ],
+      "der": {
+        "DER": 0.2703,
+        "FA": 0.1434,
+        "MISS": 0.1269
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.225,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0096",
+      "duration": 29.25,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 7.164,
+      "sisnr_per_speaker": [
+        6.755,
+        7.573
+      ],
+      "der": {
+        "DER": 0.2116,
+        "FA": 0.1527,
+        "MISS": 0.0588
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.213,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0804",
+      "duration": 18.28,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 6.077,
+      "sisnr_per_speaker": [
+        8.333,
+        3.82
+      ],
+      "der": {
+        "DER": 0.1991,
+        "FA": 0.0083,
+        "MISS": 0.1909
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.213,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0941",
+      "duration": 26.7,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 4.403,
+      "sisnr_per_speaker": [
+        8.183,
+        0.623
+      ],
+      "der": {
+        "DER": 0.5127,
+        "FA": 0.1339,
+        "MISS": 0.3788
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.233,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0425",
+      "duration": 25.75,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 4.535,
+      "sisnr_per_speaker": [
+        8.031,
+        1.038
+      ],
+      "der": {
+        "DER": 0.3038,
+        "FA": 0.0945,
+        "MISS": 0.2094
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.214,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0981",
+      "duration": 27.07,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 8.196,
+      "sisnr_per_speaker": [
+        7.815,
+        8.578
+      ],
+      "der": {
+        "DER": 0.2053,
+        "FA": 0.1066,
+        "MISS": 0.0987
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.227,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0338",
+      "duration": 29.75,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 7.009,
+      "sisnr_per_speaker": [
+        5.416,
+        8.602
+      ],
+      "der": {
+        "DER": 0.2033,
+        "FA": 0.0977,
+        "MISS": 0.1056
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.212,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1111",
+      "duration": 27.0,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 8.125,
+      "sisnr_per_speaker": [
+        12.125,
+        4.125
+      ],
+      "der": {
+        "DER": 0.1422,
+        "FA": 0.0464,
+        "MISS": 0.0958
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.216,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0029",
+      "duration": 29.91,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 4.706,
+      "sisnr_per_speaker": [
+        3.667,
+        5.744
+      ],
+      "der": {
+        "DER": 0.2579,
+        "FA": 0.1327,
+        "MISS": 0.1252
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.223,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1687",
+      "duration": 21.34,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 2.898,
+      "sisnr_per_speaker": [
+        1.798,
+        3.999
+      ],
+      "der": {
+        "DER": 0.2226,
+        "FA": 0.0981,
+        "MISS": 0.1245
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.305,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1686",
+      "duration": 24.54,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 2.588,
+      "sisnr_per_speaker": [
+        3.143,
+        2.033
+      ],
+      "der": {
+        "DER": 0.181,
+        "FA": 0.132,
+        "MISS": 0.049
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.224,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0630",
+      "duration": 29.83,
+      "true_speakers": 2,
+      "pred_speakers": 3,
+      "speaker_correct": false,
+      "sisnr_mean_db": 6.213,
+      "sisnr_per_speaker": [
+        6.298,
+        6.127
+      ],
+      "der": {
+        "DER": 0.1933,
+        "FA": 0.0978,
+        "MISS": 0.0955
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.511,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0360",
+      "duration": 22.5,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 3.757,
+      "sisnr_per_speaker": [
+        6.071,
+        1.443
+      ],
+      "der": {
+        "DER": 0.2694,
+        "FA": 0.1052,
+        "MISS": 0.1642
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.21,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0109",
+      "duration": 27.44,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 4.59,
+      "sisnr_per_speaker": [
+        1.11,
+        8.069
+      ],
+      "der": {
+        "DER": 0.262,
+        "FA": 0.1988,
+        "MISS": 0.0632
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.208,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0897",
+      "duration": 25.28,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 1.449,
+      "sisnr_per_speaker": [
+        9.28,
+        -6.382
+      ],
+      "der": {
+        "DER": 0.1789,
+        "FA": 0.1014,
+        "MISS": 0.0775
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.227,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0613",
+      "duration": 25.96,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 7.712,
+      "sisnr_per_speaker": [
+        10.015,
+        5.41
+      ],
+      "der": {
+        "DER": 0.1597,
+        "FA": 0.0867,
+        "MISS": 0.073
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.386,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0391",
+      "duration": 23.02,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 6.605,
+      "sisnr_per_speaker": [
+        7.687,
+        5.523
+      ],
+      "der": {
+        "DER": 0.2456,
+        "FA": 0.1379,
+        "MISS": 0.1077
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.293,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0548",
+      "duration": 27.53,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 5.957,
+      "sisnr_per_speaker": [
+        4.083,
+        7.831
+      ],
+      "der": {
+        "DER": 0.1833,
+        "FA": 0.0605,
+        "MISS": 0.1228
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.214,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1795",
+      "duration": 27.98,
+      "true_speakers": 2,
+      "pred_speakers": 3,
+      "speaker_correct": false,
+      "sisnr_mean_db": 5.546,
+      "sisnr_per_speaker": [
+        6.798,
+        4.293
+      ],
+      "der": {
+        "DER": 0.2566,
+        "FA": 0.0767,
+        "MISS": 0.1798
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.905,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0101",
+      "duration": 23.35,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 7.043,
+      "sisnr_per_speaker": [
+        4.123,
+        9.963
+      ],
+      "der": {
+        "DER": 0.2966,
+        "FA": 0.0867,
+        "MISS": 0.2099
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.226,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1101",
+      "duration": 28.95,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 6.268,
+      "sisnr_per_speaker": [
+        9.654,
+        2.882
+      ],
+      "der": {
+        "DER": 0.1154,
+        "FA": 0.0905,
+        "MISS": 0.0249
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.236,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0907",
+      "duration": 25.54,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 7.535,
+      "sisnr_per_speaker": [
+        13.026,
+        2.043
+      ],
+      "der": {
+        "DER": 0.118,
+        "FA": 0.0083,
+        "MISS": 0.1097
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.211,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0892",
+      "duration": 29.9,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 3.322,
+      "sisnr_per_speaker": [
+        3.142,
+        3.502
+      ],
+      "der": {
+        "DER": 0.1554,
+        "FA": 0.0608,
+        "MISS": 0.0946
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.241,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1356",
+      "duration": 25.87,
+      "true_speakers": 2,
+      "pred_speakers": 2,
+      "speaker_correct": true,
+      "sisnr_mean_db": 7.716,
+      "sisnr_per_speaker": [
+        3.689,
+        11.744
+      ],
+      "der": {
+        "DER": 0.1494,
+        "FA": 0.061,
+        "MISS": 0.0884
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.22,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0962",
+      "duration": 27.46,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 4.013,
+      "sisnr_per_speaker": [
+        10.209,
+        1.829,
+        -0.0
+      ],
+      "der": {
+        "DER": 0.2147,
+        "FA": 0.1193,
+        "MISS": 0.0954
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.995,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0219",
+      "duration": 28.73,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 2.278,
+      "sisnr_per_speaker": [
+        3.352,
+        3.482,
+        -0.0
+      ],
+      "der": {
+        "DER": 0.2977,
+        "FA": 0.1863,
+        "MISS": 0.1114
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.964,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0726",
+      "duration": 29.55,
+      "true_speakers": 3,
+      "pred_speakers": 2,
+      "speaker_correct": false,
+      "sisnr_mean_db": 2.583,
+      "sisnr_per_speaker": [
+        9.881,
+        -4.716
+      ],
+      "der": {
+        "DER": 0.2912,
+        "FA": 0.099,
+        "MISS": 0.1922
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.378,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1593",
+      "duration": 29.41,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 3.952,
+      "sisnr_per_speaker": [
+        6.415,
+        -0.0,
+        5.44
+      ],
+      "der": {
+        "DER": 0.3734,
+        "FA": 0.3267,
+        "MISS": 0.0467
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.981,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0716",
+      "duration": 27.53,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 1.467,
+      "sisnr_per_speaker": [
+        -2.606,
+        -0.0,
+        7.009
+      ],
+      "der": {
+        "DER": 0.3761,
+        "FA": 0.1511,
+        "MISS": 0.225
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.975,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0792",
+      "duration": 29.73,
+      "true_speakers": 3,
+      "pred_speakers": 2,
+      "speaker_correct": false,
+      "sisnr_mean_db": -12.046,
+      "sisnr_per_speaker": [
+        -3.786,
+        -20.306
+      ],
+      "der": {
+        "DER": 0.2675,
+        "FA": 0.0476,
+        "MISS": 0.2198
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.216,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0758",
+      "duration": 29.13,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 6.326,
+      "sisnr_per_speaker": [
+        -0.0,
+        10.616,
+        8.362
+      ],
+      "der": {
+        "DER": 0.3115,
+        "FA": 0.2964,
+        "MISS": 0.015
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.993,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0789",
+      "duration": 22.33,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 0.307,
+      "sisnr_per_speaker": [
+        -1.69,
+        2.61,
+        -0.0
+      ],
+      "der": {
+        "DER": 0.3895,
+        "FA": 0.2835,
+        "MISS": 0.1061
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.995,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1156",
+      "duration": 28.98,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 3.216,
+      "sisnr_per_speaker": [
+        -0.0,
+        3.38,
+        6.268
+      ],
+      "der": {
+        "DER": 0.4217,
+        "FA": 0.3344,
+        "MISS": 0.0872
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.976,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0095",
+      "duration": 28.71,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 2.688,
+      "sisnr_per_speaker": [
+        -0.0,
+        8.549,
+        -0.484
+      ],
+      "der": {
+        "DER": 0.2255,
+        "FA": 0.1531,
+        "MISS": 0.0725
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.976,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0467",
+      "duration": 29.5,
+      "true_speakers": 3,
+      "pred_speakers": 2,
+      "speaker_correct": false,
+      "sisnr_mean_db": -60.135,
+      "sisnr_per_speaker": [
+        -117.975,
+        -2.295
+      ],
+      "der": {
+        "DER": 0.1403,
+        "FA": 0.0877,
+        "MISS": 0.0525
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.214,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1265",
+      "duration": 27.93,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": -5.042,
+      "sisnr_per_speaker": [
+        -0.0,
+        1.81,
+        -16.937
+      ],
+      "der": {
+        "DER": 0.4189,
+        "FA": 0.2255,
+        "MISS": 0.1935
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.995,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1321",
+      "duration": 20.06,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 0.845,
+      "sisnr_per_speaker": [
+        -1.185,
+        3.719,
+        -0.0
+      ],
+      "der": {
+        "DER": 0.5389,
+        "FA": 0.4138,
+        "MISS": 0.125
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.914,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0625",
+      "duration": 26.94,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 2.761,
+      "sisnr_per_speaker": [
+        6.611,
+        1.672,
+        -0.0
+      ],
+      "der": {
+        "DER": 0.3612,
+        "FA": 0.2967,
+        "MISS": 0.0645
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.992,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1948",
+      "duration": 22.89,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 3.406,
+      "sisnr_per_speaker": [
+        -0.0,
+        5.384,
+        4.834
+      ],
+      "der": {
+        "DER": 0.2729,
+        "FA": 0.1596,
+        "MISS": 0.1133
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.986,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0229",
+      "duration": 28.58,
+      "true_speakers": 3,
+      "pred_speakers": 2,
+      "speaker_correct": false,
+      "sisnr_mean_db": -9.109,
+      "sisnr_per_speaker": [
+        -5.999,
+        -12.22
+      ],
+      "der": {
+        "DER": 0.4744,
+        "FA": 0.1452,
+        "MISS": 0.3292
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.266,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1698",
+      "duration": 21.98,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 2.531,
+      "sisnr_per_speaker": [
+        -0.0,
+        4.345,
+        3.248
+      ],
+      "der": {
+        "DER": 0.2555,
+        "FA": 0.1578,
+        "MISS": 0.0976
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.995,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1779",
+      "duration": 27.54,
+      "true_speakers": 3,
+      "pred_speakers": 2,
+      "speaker_correct": false,
+      "sisnr_mean_db": -5.755,
+      "sisnr_per_speaker": [
+        -8.642,
+        -2.867
+      ],
+      "der": {
+        "DER": 0.4152,
+        "FA": 0.2118,
+        "MISS": 0.2033
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.383,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1742",
+      "duration": 26.24,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 0.662,
+      "sisnr_per_speaker": [
+        2.658,
+        -0.673,
+        -0.0
+      ],
+      "der": {
+        "DER": 0.2516,
+        "FA": 0.1142,
+        "MISS": 0.1374
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.962,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0205",
+      "duration": 23.15,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 2.196,
+      "sisnr_per_speaker": [
+        4.897,
+        1.692,
+        -0.0
+      ],
+      "der": {
+        "DER": 0.2657,
+        "FA": 0.1721,
+        "MISS": 0.0937
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.995,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1125",
+      "duration": 29.41,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 3.826,
+      "sisnr_per_speaker": [
+        -0.0,
+        4.539,
+        6.939
+      ],
+      "der": {
+        "DER": 0.4714,
+        "FA": 0.1771,
+        "MISS": 0.2942
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.985,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0273",
+      "duration": 28.28,
+      "true_speakers": 3,
+      "pred_speakers": 2,
+      "speaker_correct": false,
+      "sisnr_mean_db": -13.473,
+      "sisnr_per_speaker": [
+        0.989,
+        -27.935
+      ],
+      "der": {
+        "DER": 0.3003,
+        "FA": 0.0494,
+        "MISS": 0.2509
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.417,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0179",
+      "duration": 28.9,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 6.091,
+      "sisnr_per_speaker": [
+        6.506,
+        -0.0,
+        11.768
+      ],
+      "der": {
+        "DER": 0.3769,
+        "FA": 0.3012,
+        "MISS": 0.0757
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.995,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_0563",
+      "duration": 27.78,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 3.118,
+      "sisnr_per_speaker": [
+        8.281,
+        1.074,
+        -0.0
+      ],
+      "der": {
+        "DER": 0.2738,
+        "FA": 0.151,
+        "MISS": 0.1228
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.748,
+        0.0
+      ]
+    },
+    {
+      "mixture_id": "test_1518",
+      "duration": 28.97,
+      "true_speakers": 3,
+      "pred_speakers": 3,
+      "speaker_correct": true,
+      "sisnr_mean_db": 2.504,
+      "sisnr_per_speaker": [
+        9.067,
+        -1.555,
+        -0.0
+      ],
+      "der": {
+        "DER": 0.2911,
+        "FA": 0.1385,
+        "MISS": 0.1527
+      },
+      "exist_probs": [
+        1.0,
+        1.0,
+        0.981,
+        0.0
+      ]
+    }
+  ],
+  "errors": []
+}
